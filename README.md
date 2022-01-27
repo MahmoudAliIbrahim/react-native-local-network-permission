@@ -1,6 +1,6 @@
 # react-native-local-network-permission
 
-nothing
+Inspired from [navico-mobile/react-native-local-network-permission](https://github.com/navico-mobile/react-native-local-network-permission)
 
 ## Installation
 
@@ -8,15 +8,10 @@ nothing
 npm install react-native-local-network-permission
 ```
 
-## Usage
+## Push new version
 
-```js
-import { multiply } from "react-native-local-network-permission";
-
-// ...
-
-const result = await multiply(3, 7);
-```
+Since we are not using any registry (like npm or github's), we push the `/lib` folder in the repo.
+So do not forget to run `yarn prepare` and then push the new version to master.
 
 ## Contributing
 
