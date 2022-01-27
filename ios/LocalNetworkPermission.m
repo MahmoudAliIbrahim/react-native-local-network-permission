@@ -1,8 +1,10 @@
 #import "LocalNetworkPermission.h"
+#import "LocalNetworkPrivacy.h"
 
 @implementation LocalNetworkPermission
+RCT_EXPORT_MODULE()
 
-RCT_EXPORT_METHOD(check,
+RCT_EXPORT_METHOD(check:(double)blank
                   withResolver:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject)
 {
@@ -12,11 +14,13 @@ RCT_EXPORT_METHOD(check,
             LocalNetworkPrivacy* localNetworkPrivacy = [LocalNetworkPrivacy new];
             [localNetworkPrivacy checkAccessState:^(BOOL granted) {
                 NSLog(@"Granted: %@", granted ? @"YES" : @"NO");
-                resolve(granted);
+                resolve(@(granted));
             }];
         });
     }else{
-        resolve(true);
+        resolve(@(true));
     }
 }
+
+@end
 
