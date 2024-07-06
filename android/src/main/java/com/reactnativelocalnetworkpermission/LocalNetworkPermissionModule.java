@@ -23,7 +23,7 @@ public class LocalNetworkPermissionModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public boolean check(int timeout, Promise promise) {
-        return promise.resolve(true);
+    public void check(int timeout, Promise promise) {
+        promise.resolve(true);
     }
 }
